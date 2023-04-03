@@ -33,7 +33,6 @@ struct Contact
 
 //声明函数
 
-
 //初始化通讯录
 void InitContact(struct Contact* ps);
 //添加信息

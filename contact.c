@@ -10,7 +10,6 @@ void InitContact(struct Contact* ps)
     ps->size = 0;//设置通讯录最初只有0个元素
 }
 
-
 //添加信息
 void AddContact(struct Contact* ps)
 {

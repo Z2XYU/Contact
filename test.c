@@ -46,8 +46,6 @@ int main()
             break;
         }
     }while(input);
-
-
     return 0;
 }
 //¥Ú”°≤Àµ•
