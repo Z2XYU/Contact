@@ -1,19 +1,25 @@
 #include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<time.h>
+#include<windows.h>
 
-#define MAX 1000
+
 #define MAX_NAME 20
 #define MAX_TELE 12
 #define MAX_MALE 5
 #define MAX_ADDR 30
+#define DEFAULT_SZ 3
 
-struct PeoInfo
+
+typedef struct PeoInfo
 {
     char name[MAX_NAME];
     char tele[MAX_TELE];
     char male[MAX_MALE];
     int age;
     char addr[MAX_ADDR];
-};
+}PeoInfo;
 enum option
 {
     EXIT,
@@ -25,11 +31,13 @@ enum option
     SORT
 };
 //通讯录类型
-struct Contact
+//使用动态内存分配创建Contact结构体
+typedef struct Contact
 {
-    struct PeoInfo date[MAX];//存放一的信息。
-    int size;//记录当前已经有的元素个数。
-};
+    struct PeoInfo *data;
+    int size;
+    int capacity;
+}Contact;
 
 //声明函数
 
@@ -47,3 +55,5 @@ void SeaechContact(struct Contact* ps);
 void ModifyContact(struct Contact* ps);
 //信息排序
 void SortContact(struct Contact* ps);
+//释放内存
+void Free(Contact *ps);

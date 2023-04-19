@@ -7,7 +7,7 @@ int main()
 {
     int input=0;
     //创建通讯录
-    struct Contact con;//存放1000个人的信息。
+    struct Contact con;
     //初始化通讯录
     InitContact(&con);
     do
@@ -37,10 +37,10 @@ int main()
             SortContact(&con);
             break;
         case EXIT:
+            //释放动态开辟内存
+            Free(&con);
             printf("退出通讯录。\n");
             break;
-            
-        
         default:
         printf("请输入正确的选项。\n");
             break;
